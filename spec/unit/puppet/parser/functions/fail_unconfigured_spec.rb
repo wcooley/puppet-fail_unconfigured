@@ -58,6 +58,15 @@ describe 'the fail_unconfigured function' do
       })
   end
 
+  it 'should quote facts with non-word characters' do
+    scope.stubs(:lookupvar).with('flibbity').returns('flabbity:babbity boo')
+    lambda { subject.call(['flibbity']) }\
+      .should(raise_error(Puppet::ParseError) { |e|
+        m = e.message
+        m.should(match('\bflibbity="flabbity:babbity boo"\b'))
+      })
+  end
+
 #  it '...blah...' do
 #    scope.function_fail_unconfigured([])
 #  end
