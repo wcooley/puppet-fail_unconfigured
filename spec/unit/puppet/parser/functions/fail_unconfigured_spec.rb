@@ -1,11 +1,12 @@
 #! /usr/bin/env ruby -S rspec
 require 'spec_helper'
 
-describe 'the fail_unconfigured function' do
+describe Puppet::Parser::Functions.function(:fail_unconfigured) do
   let (:scope) { PuppetlabsSpec::PuppetInternals.scope }
 
   subject do
-    scope.method :function_fail_unconfigured
+    function_name = Puppet::Parser::Functions.function(:fail_unconfigured)
+    scope.method(function_name)
   end
 
   before :each do

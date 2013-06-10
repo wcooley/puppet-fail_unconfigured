@@ -1,11 +1,17 @@
+dir = File.expand_path(File.dirname(__FILE__))
+$LOAD_PATH.unshift File.join(dir, 'lib')
+
+require 'puppet'
+require 'mocha/api'
+require 'rspec'
+
 require 'rubygems'
 require 'puppetlabs_spec_helper/module_spec_helper'
 
 RSpec.configure do |config|
-  config.before :each do
-    Facter::Util::Loader.any_instance.stubs(:load_all)
-    Facter.clear
-    Facter.clear_messages
-  end
+  config.mock_with :mocha
 end
 
+class Object
+  alias :must :should
+end
