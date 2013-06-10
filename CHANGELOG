@@ -1,0 +1,20 @@
+2013-06-10 - Wil Cooley <wcooley@nakedape.cc>
+ * Add Puppet Modulefile (f4dd424)
+ * Add per-file copyright notice (b0b2efc)
+ * Update gitignore from module tool boilerplate (5b82a74)
+ * Add license file (81c2d57)
+ * Add standard-ish sections, license, etc. (4831283)
+ * Rename README for Markdown (1ceaa42)
+ * Fix tests to work (bcf6106)
+ * Add standard git ignores (9ca0f33)
+
+2012-11-04 - Wil Cooley <wcooley@nakedape.cc>
+ * Implement fact value-quoting for error message (75ad408)
+ * Use simpler error message check (caaccaf)
+ * Add test of quoting fact values (33ec87c)
+ * Add rspec tests & supporting stuff (5f3fc84)
+ * Handle unset or unknown variables better (54751d4)
+
+2012-03-04 - Wil Cooley <wcooley@nakedape.cc>
+ * Adds a README (9e22928)
+ * Adds fail_unconfigured() function (f8f5c75)
