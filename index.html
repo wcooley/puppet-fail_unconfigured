@@ -36,8 +36,13 @@
         <span class="blc"></span><span class="trc"></span>
         </div>
         <article class="markdown-body">
-          <p>The 'fail_unconfigured' function was written to simplify a common pattern in
-our manifests:</p>
+          <h1>
+<a name="fail_unconfigured" class="anchor" href="#fail_unconfigured"><span class="octicon octicon-link"></span></a>fail_unconfigured</h1>
+
+<h2>
+<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h2>
+
+<p>The 'fail_unconfigured' function was written to simplify a common default case: fail and log a few facts that are often used in case expressions.</p>
 
 <pre><code>class foo::params {
     case $operatingsystem {
@@ -58,6 +63,36 @@ our manifests:</p>
     }
 }
 </code></pre>
+
+<h2>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h2>
+
+<p>Wil Cooley wcooley(at)nakedape.cc</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<pre><code>Author:: Wil Cooley (wcooley(at)nakedape.cc)
+Copyright:: Copyright (c) 2013 Wil Cooley
+License:: Apache License, Version 2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+
+<h2>
+<a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Support</h2>
+
+<p>Please log tickets and issues at our <a href="https://github.com/wcooley/puppet-fail_unconfigured/issues">Github project</a>.</p>
         </article>
       </div>
     </div>
