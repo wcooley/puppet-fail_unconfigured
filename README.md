@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wcooley/puppet-fail_unconfigured.png?branch=master)](https://travis-ci.org/wcooley/puppet-fail_unconfigured)
+
 fail_unconfigured
 =================
 
