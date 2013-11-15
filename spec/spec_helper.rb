@@ -1,17 +1,9 @@
-dir = File.expand_path(File.dirname(__FILE__))
-$LOAD_PATH.unshift File.join(dir, 'lib')
-
-require 'puppet'
-require 'mocha/api'
-require 'rspec'
-
-require 'rubygems'
+require 'rspec-puppet'
 require 'puppetlabs_spec_helper/module_spec_helper'
 
-RSpec.configure do |config|
-  config.mock_with :mocha
-end
+fixture_path = File.expand_path(File.join(__FILE__, '..', 'fixtures'))
 
-class Object
-  alias :must :should
+RSpec.configure do |c|
+  c.module_path = File.join(fixture_path, 'modules')
+  c.manifest_dir = File.join(fixture_path, 'manifests')
 end
