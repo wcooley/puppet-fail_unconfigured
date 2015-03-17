@@ -1,3 +1,8 @@
+2015-03-17 - Wil Cooley <wcooley@nakedape.cc> - 1.0.0
+ * Always include default facts.
+ * Cease downcasing fact values.
+ * Change metadata from Modulefile to metadata.json.
+
 2013-06-10 - Wil Cooley <wcooley@nakedape.cc>
  * Add Puppet Modulefile (f4dd424)
  * Add per-file copyright notice (b0b2efc)
