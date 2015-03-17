@@ -55,7 +55,6 @@ describe Puppet::Parser::Functions.function(:fail_unconfigured) do
         m.should(match('\blsbmajdistrelease=5\b'))
         m.should(match('\bnode=test_node\b'))
         m.should(match('\berror=not_configured\b'))
-        m.should_not(match('\bosfamily=RedHat\b'))
       })
   end
 

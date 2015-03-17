@@ -16,9 +16,7 @@ module Puppet::Parser::Functions
   newfunction(:fail_unconfigured, :doc => "Fail with a canned 'not_configured' message."
              ) do |args|
 
-    if args.length == 0
-        args = ['operatingsystem', 'operatingsystemrelease', 'osfamily' ]
-    end
+    args += ['operatingsystem', 'operatingsystemrelease', 'osfamily' ]
     args = ['node'] + args
 
     argpairs = [ "error=not_configured" ]
