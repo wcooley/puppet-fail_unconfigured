@@ -64,6 +64,15 @@ describe Puppet::Parser::Functions.function(:fail_unconfigured) do
       .should(raise_error(Puppet::ParseError, /flibbity="flabbity:babbity boo"/))
   end
 
+  it 'should dedup facts' do
+    scope.stubs(:lookupvar).with('osfamily').returns('RedHat')
+    scope.stubs(:lookupvar).with('node').returns('test_node')
+    lambda { subject.call(['osfamily']) } \
+      .should(raise_error(Puppet::ParseError) { |e|
+        e.message.should_not(match('\bosfamily=RedHat.*osfamily=RedHat\b'))
+    })
+  end
+
 #  it '...blah...' do
 #    scope.function_fail_unconfigured([])
 #  end
