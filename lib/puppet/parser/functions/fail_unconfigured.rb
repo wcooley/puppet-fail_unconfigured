@@ -23,7 +23,7 @@ module Puppet::Parser::Functions
     argpairs << "module=#{self.source.module_name}" if self.source.module_name
     argpairs << "class=#{self.source.name}"         if self.source.name
 
-    args.each do |arg|
+    args.uniq.each do |arg|
         val = lookupvar(arg) || :undefined
         next if val == :undefined
         val = %Q{"#{val}"} if val =~ /[^\w\.]/
