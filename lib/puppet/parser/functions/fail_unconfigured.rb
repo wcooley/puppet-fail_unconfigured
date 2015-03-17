@@ -28,7 +28,6 @@ module Puppet::Parser::Functions
     args.each do |arg|
         val = lookupvar(arg) || :undefined
         next if val == :undefined
-        val.downcase!
         val = %Q{"#{val}"} if val =~ /[^\w\.]/
         argpairs.push("#{arg}=#{val}")
     end

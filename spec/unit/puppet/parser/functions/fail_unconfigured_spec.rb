@@ -30,7 +30,7 @@ describe Puppet::Parser::Functions.function(:fail_unconfigured) do
 
     scope.stubs(:lookupvar).with('osfamily').returns('RedHat')
     lambda { subject.call([]) }\
-      .should(raise_error(Puppet::ParseError, /\bosfamily=redhat\b/))
+      .should(raise_error(Puppet::ParseError, /\bosfamily=RedHat\b/))
     scope.stubs(:lookupvar).with('operatingsystem').returns('CentOS')
     scope.stubs(:lookupvar).with('operatingsystemrelease').returns('5.8')
 
@@ -38,9 +38,9 @@ describe Puppet::Parser::Functions.function(:fail_unconfigured) do
       .should(raise_error(Puppet::ParseError) { |e|
         m = e.message
         m.should(match('\berror=not_configured\b'))
-        m.should(match('\bosfamily=redhat\b'))
+        m.should(match('\bosfamily=RedHat\b'))
         m.should(match('\bnode=test_node\b'))
-        m.should(match('\boperatingsystem=centos\b'))
+        m.should(match('\boperatingsystem=CentOS\b'))
         m.should(match('\boperatingsystemrelease=5.8\b'))
       })
   end
@@ -55,7 +55,7 @@ describe Puppet::Parser::Functions.function(:fail_unconfigured) do
         m.should(match('\blsbmajdistrelease=5\b'))
         m.should(match('\bnode=test_node\b'))
         m.should(match('\berror=not_configured\b'))
-        m.should_not(match('\bosfamily=redhat\b'))
+        m.should_not(match('\bosfamily=RedHat\b'))
       })
   end
 
