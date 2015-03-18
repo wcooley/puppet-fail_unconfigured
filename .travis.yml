@@ -3,7 +3,11 @@ rvm:
   - 1.8.7
   - 1.9.3
   - 2.0.0
-script: 'rake spec'
+script:
+  - gem list
+  - cat .gemfile.lock
+  - rake spec
+  - bundle exec rake spec
 env:
   - PUPPET_VERSION="~> 2.7.0"
   - PUPPET_VERSION="~> 3.6.0"
