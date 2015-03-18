@@ -5,7 +5,7 @@ rvm:
   # EL7
   - 2.0.0
   # Teh f00t00r
-  - ruby-head
+  #- ruby-head
 script:
   - cat .gemfile.lock
   - bundle exec rake spec
