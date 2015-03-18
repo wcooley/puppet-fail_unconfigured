@@ -6,8 +6,11 @@ script:
   - cat .gemfile.lock
   - bundle exec rake spec
 env:
-  - PUPPET_VERSION="~> 2.7.0"
-  - PUPPET_VERSION="~> 3"
+  global:
+    - SPEC_OPTS="-fd"
+  matrix:
+    - PUPPET_VERSION="~> 2.7.0"
+    - PUPPET_VERSION="~> 3"
 gemfile: .gemfile
 matrix:
     fast_finish: true
