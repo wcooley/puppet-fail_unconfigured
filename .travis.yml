@@ -6,6 +6,7 @@ rvm:
 script:
   - gem list
   - cat .gemfile.lock
+  - env |sort
   - rake spec
   - bundle exec rake spec
 env:
