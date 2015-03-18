@@ -19,7 +19,6 @@ gemfile: .gemfile
 matrix:
     fast_finish: true
     allow_failures:
-        - rvm: 1.9.3
         - rvm: 2.0.0
         - rvm: ruby-head
     exclude:
