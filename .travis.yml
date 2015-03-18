@@ -1,7 +1,11 @@
 language: ruby
 rvm:
+  # EL5 & 6
   - 1.8.7
+  # EL7
   - 2.0.0
+  # Teh f00t00r
+  - ruby-head
 script:
   - cat .gemfile.lock
   - bundle exec rake spec
@@ -17,8 +21,11 @@ matrix:
     allow_failures:
         - rvm: 1.9.3
         - rvm: 2.0.0
+        - rvm: ruby-head
     exclude:
         - rvm: 2.0.0
+          env: PUPPET_VERSION="~> 2.7.0"
+        - rvm: ruby-head
           env: PUPPET_VERSION="~> 2.7.0"
 notifications:
   email: false
